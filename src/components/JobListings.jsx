@@ -11,7 +11,7 @@ const JobListings = ({ isHome = false }) => {
       const apiUrl =
         import.meta.env.MODE === "development"
           ? "/jobs.json" // Use local file during development
-          : "https://your-site.netlify.app/jobs.json";
+          : "https://react-jobbs.netlify.app/jobs.json";
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();
