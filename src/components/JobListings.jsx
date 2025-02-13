@@ -8,7 +8,10 @@ const JobListings = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const apiUrl = "/jobs.json";
+      const apiUrl =
+        import.meta.env.MODE === "development"
+          ? "/jobs.json" // Use local file during development
+          : "https://your-site.netlify.app/jobs.json";
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();
