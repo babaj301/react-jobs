@@ -1,26 +1,26 @@
-import React from 'react';
+import React from "react";
 import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-} from 'react-router-dom';
+} from "react-router-dom";
 
-import MainLayout from './layouts/MainLayout';
+import MainLayout from "./layouts/MainLayout";
 
-import HomePage from './pages/HomePage';
-import JobsPage from './pages/JobsPage';
-import NotFoundPage from './pages/NotFoundPage';
-import JobPage from './pages/JobPage';
-import AddJobPage from './pages/AddJobPage';
+import HomePage from "./pages/HomePage";
+import JobsPage from "./pages/JobsPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import JobPage from "./pages/JobPage";
+import AddJobPage from "./pages/AddJobPage";
 
 const App = () => {
   // Add Job
   const addJob = async (newJob) => {
-    const res = await fetch('/api/jobs', {
-      method: 'POST',
+    const res = await fetch("/api/jobs", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(newJob),
     });
@@ -31,7 +31,7 @@ const App = () => {
 
   const deleteJob = async (id) => {
     const res = await fetch(`/api/jobs/${id}`, {
-      method: 'DELETE',
+      method: "DELETE",
     });
     return;
   };
